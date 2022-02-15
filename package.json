@@ -1,0 +1,63 @@
+{
+  "name": "poc-wc-testing",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "module": "main.ts",
+  "main": "build/bundle.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "jest src --watch",
+    "test:coverage": "jest src --coverage"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.16.11",
+    "@esm-bundle/chai": "^4.3.4-fix.0",
+    "@open-wc/testing": "^3.0.0-next.5",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@types/jest": "^27.4.0",
+    "babel-jest": "^27.5.1",
+    "jest": "^27.5.1",
+    "prettier": "^2.5.1",
+    "rollup": "^2.67.2",
+    "rollup-plugin-livereload": "^2.0.5",
+    "rollup-plugin-serve": "^1.1.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "ts-jest": "^27.1.3",
+    "tslib": "^2.3.1",
+    "typescript": "^4.5.5"
+  },
+  "dependencies": {
+    "lit": "^2.1.3",
+    "query-selector-shadow-dom": "^1.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "moduleDirectories": [
+      "node_modules",
+      "./src"
+    ],
+    "transform": {
+      "^.+\\.(js|mjs)$": "babel-jest",
+      "^.+\\.ts$": "ts-jest"
+    },
+    "moduleFileExtensions": [
+      "js",
+      "ts"
+    ],
+    "transformIgnorePatterns": [
+      "node_modules/(?!(lit|@lit|lit-html|lit-element|@open-wc|@esm-bundle|@web|chai-a11y-axe|query-selector-shadow-dom)/)"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.ts",
+      "!src/main.ts",
+      "!src/tests/**/*"
+    ]
+  }
+}
