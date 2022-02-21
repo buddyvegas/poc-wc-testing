@@ -70,16 +70,18 @@ PERFORMANCE OF THIS SOFTWARE.
             </li>`))}
       </ul>
     `,i=R` <p>You're all caught up!</p> `,s=t.length>0?e:i;return R`
-      <h2>To Do</h2>
-      ${s}
-      <input id="newitem" aria-label="New item" />
-      <button @click=${this.addToDo}>Add</button>
-      <br />
-      <label>
-        <input type="checkbox" @change=${this.setHideCompleted} ?checked=${this.hideCompleted} />
-        Hide completed
-      </label>
-      <some-element></some-element>
+      <div>
+        <h2>To Do</h2>
+        ${s}
+        <input id="newitem" aria-label="New item" />
+        <button @click=${this.addToDo}>Add</button>
+        <br />
+        <label>
+          <input type="checkbox" @change=${this.setHideCompleted} ?checked=${this.hideCompleted} />
+          Hide completed
+        </label>
+        <some-element></some-element>
+      </div>
     `}};ct.styles=r`
     .completed {
       text-decoration-line: line-through;
