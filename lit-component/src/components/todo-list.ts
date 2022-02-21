@@ -60,16 +60,18 @@ export class ToDoList extends LitElement {
     const todosOrMessage = items.length > 0 ? todos : caughtUpMessage;
 
     return html`
-      <h2>To Do</h2>
-      ${todosOrMessage}
-      <input id="newitem" aria-label="New item" />
-      <button @click=${this.addToDo}>Add</button>
-      <br />
-      <label>
-        <input type="checkbox" @change=${this.setHideCompleted} ?checked=${this.hideCompleted} />
-        Hide completed
-      </label>
-      <some-element></some-element>
+      <div>
+        <h2>To Do</h2>
+        ${todosOrMessage}
+        <input id="newitem" aria-label="New item" />
+        <button @click=${this.addToDo}>Add</button>
+        <br />
+        <label>
+          <input type="checkbox" @change=${this.setHideCompleted} ?checked=${this.hideCompleted} />
+          Hide completed
+        </label>
+        <some-element></some-element>
+      </div>
     `;
   }
 }
